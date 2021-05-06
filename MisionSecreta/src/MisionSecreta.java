@@ -95,7 +95,11 @@ public class MisionSecreta {
 		return morse(mensaje) + octal(mensaje) + bacedifogu(mensaje);
 	}
 	public String octal(String mensaje) {
-		return "> " + mensaje + " (Octal)\n\n";
+		String stringEncriptado = "";
+		for (int i = 0; i < mensaje.length(); i++) {
+			stringEncriptado = stringEncriptado + Integer.toOctalString(mensaje.charAt(i));
+		}
+		return "> " + stringEncriptado + " (Octal)\n\n";
 	}
 	public String morse(String mensaje) {
 		String stringEncriptado = "";		
