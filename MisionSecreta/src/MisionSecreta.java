@@ -94,10 +94,10 @@ public class MisionSecreta {
 	public String codificar(String mensaje) {
 		return morse(mensaje) + octal(mensaje) + bacedifogu(mensaje);
 	}
-	public String morse(String mensaje) {
-		return "> " + mensaje + " (Morse)\n\n";
-	}
 	public String octal(String mensaje) {
+		return "> " + mensaje + " (Octal)\n\n";
+	}
+	public String morse(String mensaje) {
 		String stringEncriptado = "";		
 		for (int i = 0; i < mensaje.length(); i++) {
 			if (morseMap.containsKey(mensaje.charAt(i))) {
@@ -106,7 +106,7 @@ public class MisionSecreta {
 				stringEncriptado = stringEncriptado + mensaje.charAt(i);
 			}
         }
-		return "> " + stringEncriptado + " (Octal)\n\n";
+		return "> " + stringEncriptado + " (Morse)\n\n";
 	}
 	public String bacedifogu(String mensaje) {
 		String stringEncriptado = "";		
